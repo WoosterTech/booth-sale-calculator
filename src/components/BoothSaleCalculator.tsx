@@ -65,10 +65,10 @@ export default function BoothSaleCalculator() {
                      onChange={(e) => updateScout(index, "time", e.target.value)}
                      className="border p-2 w-24 rounded"
                     />
-                    <button onClick={() => removeScout(index)} className="ml-2">Remove</button>
+                    <button onClick={() => removeScout(index)} className="ml-2" style={{ backgroundColor: '#005640', color: 'white' }}>Remove</button>
                 </div>
             ))}
-            <button onClick={addScout}>Add Scout</button>
+            <button onClick={addScout} style={{ backgroundColor: '#005640', color: 'white' }}>Add Scout</button>
             {results.length > 0 && (
                 <div className="mt-4">
                     <h2 className="text-lg font-semibold">Results</h2>
