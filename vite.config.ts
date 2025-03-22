@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 
 export default defineConfig({
-  base: '/booth-sale-calculator/', // Add this line
+  base: '/booth-sale-calculator/',
   plugins: [
     react(),
     VitePWA({
@@ -18,12 +18,12 @@ export default defineConfig({
         theme_color: '#ffffff',
         icons: [
           {
-            src: '/web-app-manifest-192x192.png',
+            src: '/booth-sale-calculator/web-app-manifest-192x192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/web-app-manifest-512x512.png',
+            src: '/booth-sale-calculator/web-app-manifest-512x512.png',
             sizes: '512x512',
             type: 'image/png',
           },
