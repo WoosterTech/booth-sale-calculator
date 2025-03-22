@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 
 export default defineConfig({
+  base: '/booth-sale-calculator/', // Add this line
   plugins: [
     react(),
     VitePWA({
