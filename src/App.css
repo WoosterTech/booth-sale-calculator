@@ -3,42 +3,94 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  padding: 1.5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+:root {
+  --app-bg: #f3f4f6;
+  --surface: #ffffff;
+  --surface-elevated: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --border-color: #d1d5db;
+  --accent: #005640;
+  --accent-hover: #004232;
+  --accent-contrast: #ffffff;
+  --row-alt: #f3f4f6;
+  --row-total: #fef3c7;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-bg: #0f172a;
+    --surface: #111827;
+    --surface-elevated: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --border-color: #4b5563;
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --accent-contrast: #052e16;
+    --row-alt: #1f2937;
+    --row-total: #3f3a21;
   }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--app-bg);
+  color: var(--text-primary);
 }
 
-.card {
-  padding: 2em;
+.calculator-card {
+  background-color: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.08);
+  text-align: left;
 }
 
-.read-the-docs {
-  color: #888;
+.calculator-card label,
+.calculator-card h1,
+.calculator-card h2 {
+  color: var(--text-primary);
+}
+
+.calculator-input {
+  background-color: var(--surface-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.calculator-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.calculator-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.calculator-button {
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  border: 1px solid transparent;
+}
+
+.calculator-button:hover {
+  background-color: var(--accent-hover);
+}
+
+.calculator-table th,
+.calculator-table td {
+  border-color: var(--border-color);
+}
+
+.result-row-alt {
+  background-color: var(--row-alt);
+}
+
+.result-row-total {
+  background-color: var(--row-total);
 }

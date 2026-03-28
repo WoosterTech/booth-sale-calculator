@@ -16,7 +16,7 @@
     "@tailwindcss/vite": "^4.0.15",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "vite-plugin-pwa": "^0.21.2",
+    "vite-plugin-pwa": "^1.2.0",
     "workbox-window": "^7.3.0"
   },
   "devDependencies": {

@@ -37,7 +37,7 @@ export default function BoothSaleCalculator() {
     }, [scouts, totalBoxes]);
 
     return (
-        <div className="p-4 max-2-md mx-auto" style={{ backgroundColor: '#d5f267' }}>
+        <div className="calculator-card p-4 max-w-2xl mx-auto w-full">
             <h1 className="text-2xl font-bold">Booth Sale Calculator</h1>
             <div className="my-4">
                 <label className="block font-semibold">Total Boxes Sold:</label>
@@ -45,7 +45,7 @@ export default function BoothSaleCalculator() {
                     type="number"
                     value={totalBoxes}
                     onChange={(e) => setTotalBoxes(Number(e.target.value))}
-                    className="w-full border p-2 rounded"
+                    className="calculator-input w-full p-2 rounded"
                 />
             </div>
             <h2 className="text-lg font-semibold">Scouts</h2>
@@ -56,23 +56,23 @@ export default function BoothSaleCalculator() {
                      placeholder="Name"
                      value={scout.name}
                      onChange={(e) => updateScout(index, "name", e.target.value)}
-                     className="border p-2 flex-1 rounded"
+                     className="calculator-input p-2 flex-1 rounded"
                     />
                     <input
                      type="number"
                      placeholder="Hours"
                      value={scout.time}
                      onChange={(e) => updateScout(index, "time", e.target.value)}
-                     className="border p-2 w-24 rounded"
+                     className="calculator-input p-2 w-24 rounded"
                     />
-                    <button onClick={() => removeScout(index)} className="ml-2" style={{ backgroundColor: '#005640', color: 'white' }}>Remove</button>
+                    <button onClick={() => removeScout(index)} className="calculator-button ml-2">Remove</button>
                 </div>
             ))}
-            <button onClick={addScout} style={{ backgroundColor: '#005640', color: 'white' }}>Add Scout</button>
+            <button onClick={addScout} className="calculator-button">Add Scout</button>
             {results.length > 0 && (
                 <div className="mt-4">
                     <h2 className="text-lg font-semibold">Results</h2>
-                    <table className="w-full border-collapse mx-auto table-auto">
+                    <table className="calculator-table w-full border-collapse mx-auto table-auto">
                         <thead>
                             <tr>
                                 <th className="border p-2">Name</th>
@@ -81,12 +81,12 @@ export default function BoothSaleCalculator() {
                         </thead>
                         <tbody>
                             {results.map((result, index) => (
-                                <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : ""}>
+                                <tr key={index} className={index % 2 === 0 ? "result-row-alt" : ""}>
                                     <td className="border p-2">{result.name}</td>
                                     <td className="border p-2">{result.boxes}</td>
                                 </tr>
                             ))}
-                            <tr className="bg-yellow-200">
+                            <tr className="result-row-total">
                                 <td className="border p-2 font-semibold">Total</td>
                                 <td className="border p-2 font-semibold">{results.reduce((sum, result) => sum + result.boxes, 0)}</td>
                             </tr>
